@@ -65,7 +65,7 @@ function scrapePeriodically() {
       if (html) {
 
         const rowContent = scrapeTable(html);
-        console.log("Row content:", rowContent[0]);
+        console.log(`[${new Date()}] - Row content: ${rowContent}`);
 
         // Read the content of 'last.txt' file
         const filePath = 'last.txt';
@@ -90,4 +90,4 @@ function scrapePeriodically() {
 scrapePeriodically();
 
 // Schedule fetch and scrape every minute
-setInterval(scrapePeriodically, 30 * 1000); // 60 * 1000 milliseconds = 1 minute
+setInterval(scrapePeriodically, 100 * 1000); // 60 * 1000 milliseconds = 1 minute

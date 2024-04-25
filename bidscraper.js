@@ -64,14 +64,14 @@ function scrapePeriodically() {
       if (html) {
 
         const rowContent = scrapeTable(html);
-        console.log("Row content:", rowContent);
+        console.log(`[${new Date()}] - Row content: ${rowContent}`);
         const rowContentStr = rowContent.join('|');
 
         const filePath = 'last_bid.txt';
         const fileContent = readFileContent(filePath);
 
         if (fileContent !== rowContentStr) {
-          console.log("more DOT!");
+          console.log("more new Bid!");
           writeFileContent(filePath, rowContentStr);
           player.play('./vuvuzela.mp3', (err) => {
             if (err) console.error("Error playing sound:", err);
@@ -88,4 +88,4 @@ function scrapePeriodically() {
 scrapePeriodically();
 
 // Schedule fetch and scrape every minute
-setInterval(scrapePeriodically, 30 * 1000); // 60 * 1000 milliseconds = 1 minute
+setInterval(scrapePeriodically, 100 * 1000); // 60 * 1000 milliseconds = 1 minute
