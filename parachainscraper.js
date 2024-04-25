@@ -56,44 +56,8 @@ function writeFileContent(filePath, content) {
   }
 }
 
-
 // URL to scrape
 const url = 'https://polkadot.subscan.io/crowdloan_contribute?page=1&fund_id=3370-90';
-
-// Fetch HTML content and scrape the table
-// fetchHTML(url)
-//     .then(html => {
-//         if (html) {
-//           const rowContent = scrapeTable(html);
-//           console.log("Row content:", rowContent[0]);
-
-//           // Read the content of 'last.txt' file
-//           const filePath = 'last.txt';
-//           const fileContent = readFileContent(filePath);
-
-//           // Check if the content is equal to "1", if not replace it with "2"
-//           if (fileContent !== rowContent[0]) {
-//             console.log("more DOT!");
-//             writeFileContent(filePath, rowContent[0]);
-//             // player.play('./coin-payout-slot-machine.mp3', (err) => {
-//             //   if (err) console.error("Error playing sound:", err);
-//             // });
-//           }
-//         }
-//     })
-//     .catch(error => {
-//         console.error("Error:", error);
-//     });
-
-// async function fetchHTML(url) {
-//   try {
-//     const response = await axios.get(url);
-//     return response.data;
-//   } catch (error) {
-//     console.error("Error fetching the HTML:", error);
-//     return null;
-//   }
-// }
 
 function scrapePeriodically() {
   fetchHTML(url)
